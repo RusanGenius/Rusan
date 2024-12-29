@@ -8,12 +8,14 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div id="menu-toggle" class="menu-button">&#9776;</div>
-    <div id="side-menu" class="side-menu">
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="projects.html">Проекты</a></li>
-        </ul>
+    <body data-page="index">
+    <div id="header" class="header">
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html" data-page="index">Главная</a></li>
+                <li><a href="projects.html" data-page="projects">Проекты</a></li>
+            </ul>            
+        </nav>
         <div class="social-buttons">
             <a href="https://t.me/astermaneiro" target="_blank">
                 <img src="sources/telegram.png" alt="Telegram">
@@ -21,10 +23,9 @@
             <a href="https://x.com/Astermaneirou?s=09" target="_blank">
                 <img src="sources/X.png" alt="X">
             </a>
-        </div>        
+        </div>     
     </div>    
     <h1>Русан - гений</h1>
-    <hr>
     <p>Русан - гениальный человек, который имеет 130 IQ</p>
     <a href="agree.html" class="button">Согласен</a>
 </body>
