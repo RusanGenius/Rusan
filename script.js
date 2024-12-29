@@ -13,6 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const sideMenu = document.getElementById('side-menu');
     const body = document.body;
 
+    const currentPage = document.body.getAttribute('data-page'); // Указывайте `data-page` на каждой странице
+    const navLinks = document.querySelectorAll('.nav a');
+
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+    });
+    
+
     if (menuToggle && sideMenu) {
         // Открытие/закрытие бокового меню
         menuToggle.addEventListener('click', () => {
