@@ -7,22 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="header" class="header">
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html" data-page="index">Главная</a></li>
-                <li><a href="projects.html" data-page="projects">Проекты</a></li>
-            </ul>            
-        </nav>
-        <div class="social-buttons">
-            <a href="https://t.me/astermaneiro" target="_blank">
-                <img src="sources/telegram.png" alt="Telegram">
-            </a>
-            <a href="https://x.com/Astermaneirou?s=09" target="_blank">
-                <img src="sources/X.png" alt="X">
-            </a>
-        </div>     
-    </div>    
+    <header class="header">
+        <div class="nav-container">
+            <div class="social-buttons">
+                <a href="https://t.me/astermaneiro" target="_blank" aria-label="Telegram">
+                    <img src="sources/telegram.png" alt="Telegram">
+                </a>
+                <a href="https://x.com/Astermaneirou?s=09" target="_blank" aria-label="X">
+                    <img src="sources/X.png" alt="X">
+                </a>
+            </div>
+            
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" data-page="index">Главная</a></li>
+                    <li><a href="projects.html" data-page="projects">Проекты</a></li>
+                    <li><a href="qr.html" data-page="qr">QR code</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Открыть меню">
+                <img src="sources/menu.svg" alt="Меню" class="menu-icon">
+                <img src="sources/cross.svg" alt="Закрыть" class="close-icon">
+            </button>
+        </div>
+    </header>
     <div class="container">
         <h1>Вы согласны!</h1>
         <p id="karma">+ 0,1 к карме</p>
