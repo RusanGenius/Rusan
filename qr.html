@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR код сайта</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="qr">
+    <header class="header">
+        <div class="nav-container">
+            <div class="social-buttons">
+                <a href="https://t.me/astermaneiro" target="_blank" aria-label="Telegram">
+                    <img src="sources/telegram.png" alt="Telegram">
+                </a>
+                <a href="https://x.com/Astermaneirou?s=09" target="_blank" aria-label="X">
+                    <img src="sources/X.png" alt="X">
+                </a>
+            </div>
+            
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" data-page="index">Главная</a></li>
+                    <li><a href="projects.html" data-page="projects">Проекты</a></li>
+                    <li><a href="qr.html" data-page="qr">QR code</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Открыть меню">
+                <img src="sources/menu.svg" alt="Меню" class="menu-icon">
+                <img src="sources/cross.svg" alt="Закрыть" class="close-icon">
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="qr-container">
+            <img src="sources/qrcode.png" alt="QR код сайта" class="qr-code">
+            <p class="domain">https://rusangenius.github.io/Rusan/</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
