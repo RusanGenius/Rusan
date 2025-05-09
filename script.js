@@ -1,40 +1,45 @@
-function getRandomKarma() {
-    return (Math.random() * (0.9 - 0.1) + 0.1).toFixed(1);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const karmaElement = document.getElementById('karma');
-    if (karmaElement) { // Проверяем, существует ли элемент
-        const randomKarma = getRandomKarma();
+    if (karmaElement) {
+        const randomKarma = (Math.random() * (0.9 - 0.1) + 0.1).toFixed(1);
         karmaElement.textContent = `+ ${randomKarma} к карме`;
     }
 
-    const menuToggle = document.getElementById('menu-toggle');
-    const sideMenu = document.getElementById('side-menu');
-    const body = document.body;
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
 
-    const currentPage = document.body.getAttribute('data-page'); // Указывайте `data-page` на каждой странице
-    const navLinks = document.querySelectorAll('.nav a');
-
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('data-page');
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-        }
-    });
-    
-
-    if (menuToggle && sideMenu) {
-        // Открытие/закрытие бокового меню
-        menuToggle.addEventListener('click', () => {
-            sideMenu.classList.toggle('open');
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
         });
 
-        // Закрытие меню при клике вне него
-        body.addEventListener('click', (e) => {
-            if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                sideMenu.classList.remove('open');
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
             }
         });
     }
+
+    const currentPage = document.body.getAttribute('data-page');
+    const navLinks = document.querySelectorAll('.nav a');
+    
+    navLinks.forEach(link => {
+        if (link.getAttribute('data-page') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    document.querySelectorAll('.project h2').forEach(title => {
+        title.style.fontSize = `clamp(1.1rem, 3.5vw, 1.5rem)`;
+    });
 });
