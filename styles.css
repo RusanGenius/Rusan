@@ -259,12 +259,13 @@ p {
         display: flex;
         flex-wrap: nowrap;
         gap: 10px;
-        justify-content: flex-start;
+        justify-content: center;
         padding: 10px 15px;
-        margin: 0;
+        margin: 0 auto;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         min-height: 45px;
+        max-width: max-content;
     }
     
     .nav li {
@@ -305,7 +306,7 @@ p {
     }
     
     h1 {
-        font-size: 2.7rem;
+        font-size: 5rem;
     }
     
     p {
